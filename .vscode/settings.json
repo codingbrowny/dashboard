@@ -8,6 +8,8 @@
     "prettier.singleQuote": true,
     "cSpell.words": [
         "Ecommerce",
-        "Kanban"
-    ]
+        "Kanban",
+        "Shopware"
+    ],
+    "editor.fontSize": 16
 }
