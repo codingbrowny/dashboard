@@ -31,8 +31,8 @@ const Layout = ({children}) => {
         <TooltipComponent content='Settings' position='top'>
           <button
             type='button'
-            className='text-3xl p-3 hover:drop-shadow-xl hover:bg-light-gray text-white'
-            style={{ background: 'salmon', borderRadius: '50%' }}
+            className='text-2xl p-2 hover:drop-shadow-xl hover:bg-light-gray text-white bg-red-500'
+            style={{ borderRadius: '50%' }}
           >
             <FiSettings />
           </button>
@@ -40,20 +40,21 @@ const Layout = ({children}) => {
       </div>
       {activeMenu ? (
         <div className='w-72 fixed sidebar dark:bg-secondary-dark-bg bg-white'>
-        <Sidebar/>
+          <Sidebar />
         </div>
       ) : (
         <div className='w-0 dark:bg-secondary-dark-bg'>
-          <Sidebar/>
+          <Sidebar />
         </div>
       )}
       <div
-        className={`dark:bg-main-bg bg-main-bg min-h-screen w-full ${
+        className={`dark:bg-main-bg min-h-screen w-full ${
           activeMenu ? 'md:ml-72' : 'flex-2'
         }`}
+        style={{ background: '#f0f3fa' }}
       >
         <div className='fixed md:static bg-main-bg dark:bg-main-dark-bg navbar w-full'>
-          <Navbar/>
+          <Navbar />
         </div>
         {children}
       </div>

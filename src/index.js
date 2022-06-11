@@ -6,7 +6,8 @@ import App from "./App"
 
 import { ContextProvider } from './context/ContextProvider'
 
-ReactDOM.render(
+ReactDOM.createRoot(document.getElementById('root')).render(
     <ContextProvider>
-        <App />
-    </ContextProvider>, document.getElementById('root'))
+    <App />
+    </ContextProvider>
+)

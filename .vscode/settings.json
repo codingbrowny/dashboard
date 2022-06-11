@@ -10,7 +10,11 @@
         "Ecommerce",
         "Kanban",
         "Lerdit",
+        "semibold",
         "Shopware"
     ],
-    "editor.fontSize": 16
+    "editor.fontSize": 16,
+    "editor.formatOnPaste": true,
+    "editor.formatOnSave": true,
+    "editor.formatOnType": true
 }

@@ -1,5 +1,5 @@
 import React, {useEffect} from 'react';
-import {AiOutlineMenu} from 'react-icons/ai';
+import { HiOutlineMenuAlt2 } from 'react-icons/hi';
 import {FiShoppingCart} from 'react-icons/fi';
 import {BsChatLeft} from "react-icons/bs";
 import {RiNotification3Line} from 'react-icons/ri';
@@ -53,7 +53,7 @@ const Navbar = () => {
       title='Menu' 
       btnFunc={()=> setActiveMenu((prevActiveMenu)=> !prevActiveMenu)}
       color='red'
-      icon={<AiOutlineMenu/>} />
+      icon={<HiOutlineMenuAlt2/>} />
       
       <div className="flex">
       <NavBtn 
