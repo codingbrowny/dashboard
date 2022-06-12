@@ -16,12 +16,12 @@ import {
   Inject,
 } from '@syncfusion/ej2-react-grids';
 
-import { ordersData, ordersGrid, contextMenuItems } from '../data/dummy';
+import { ordersData, ordersGrid } from '../data/dummy';
 import { Header } from '../components';
 
 const Orders = () => {
   return (
-    <div className='m-2 md:mx-5 md:mt-12 p-2 md:p-10 rounded-2xl bg-white'>
+    <div className='m-2 md:mx-10 md:mt-12 p-2 md:p-10 rounded-2xl bg-white'>
       <Header title='Orders' category='Page' />
       <GridComponent
         id='gridcomp'

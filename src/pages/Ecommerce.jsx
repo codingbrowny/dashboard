@@ -1,11 +1,11 @@
 import React from 'react';
-import { BsCurrencyDollar } from 'react-icons/bs';
+// import { BsCurrencyDollar } from 'react-icons/bs';
 import { GoPrimitiveDot } from 'react-icons/go';
 
 import {
   StackedChart,
   Button,
-  PieChart,
+  // PieChart,
   Card,
   SparkLineChart,
 } from '../components';
@@ -13,7 +13,7 @@ import {
 import {
   earningData,
   SparklineAreaData,
-  ecomPieChartData,
+  // ecomPieChartData,
 } from '../data/dummy';
 
 import { useStateContext } from '../context/ContextProvider';
@@ -21,7 +21,7 @@ import { useStateContext } from '../context/ContextProvider';
 const Ecommerce = () => {
   const {currentColor} = useStateContext()
   return (
-    <div className='mt-12 px-5'>
+    <div className='mt-12 px-5 md:mx-10'>
       <div className='flex flex-wrap lg:flex-nowrap justify-center'>
         <div className='flex justify-center flex-wrap gap-2 items-center'>
           {earningData.map((item) => (
