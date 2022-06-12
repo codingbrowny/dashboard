@@ -31,7 +31,7 @@ const Layout = ({children}) => {
         <TooltipComponent content='Settings' position='top'>
           <button
             type='button'
-            className='text-2xl p-2 hover:drop-shadow-xl hover:bg-light-gray text-white bg-red-500'
+            className='text-2xl p-2 hover:drop-shadow-xl text-white bg-red-500'
             style={{ borderRadius: '50%' }}
           >
             <FiSettings />
