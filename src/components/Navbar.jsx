@@ -27,7 +27,7 @@ const NavBtn = ({title, btnFunc, icon, color, dotColor}) => (
 )
 
 const Navbar = () => {
-  const {activeMenu, setActiveMenu, isClicked, setIsClicked, screenSize, setScreenSize, handleClick} = useStateContext();
+  const {activeMenu, setActiveMenu, isClicked, setIsClicked, screenSize, setScreenSize, handleClick, currentColor} = useStateContext();
 
   useEffect(() => {
     const resizeHandler = () => setScreenSize(window.innerWidth);
@@ -52,27 +52,27 @@ const Navbar = () => {
       <NavBtn 
       title='Menu' 
       btnFunc={()=> setActiveMenu((prevActiveMenu)=> !prevActiveMenu)}
-      color='red'
+      color={currentColor}
       icon={<HiOutlineMenuAlt2/>} />
       
       <div className="flex">
       <NavBtn 
       title='Cart' 
       btnFunc={()=> handleClick('cart')}
-      color='red'
+      color={currentColor}
       icon={<FiShoppingCart/>} 
       />
       <NavBtn 
       title='Messages' 
       btnFunc={()=> handleClick('messages')}
-      color='red'
+      color={currentColor}
       dotColor='#f338'
       icon={<BsChatLeft/>} 
       />
       <NavBtn 
       title='Notification' 
       btnFunc={()=> handleClick('notification')}
-      color='red'
+      color={currentColor}
       dotColor='#f338'
       icon={<RiNotification3Line/>} 
       />

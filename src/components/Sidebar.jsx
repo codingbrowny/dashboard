@@ -9,7 +9,7 @@ import { links } from '../data/dummy';
 import { useStateContext } from '../context/ContextProvider';
 
 const Sidebar = () => {
-  const {activeMenu, setActiveMenu, screenSize} = useStateContext();
+  const {activeMenu, setActiveMenu, screenSize, currentColor} = useStateContext();
 
   const sidebarCloseHandler = () => {
     if(activeMenu && screenSize <= 900) {
@@ -17,10 +17,8 @@ const Sidebar = () => {
     }
   }
 
-  const activeLink =
-    'flex item-center gap-5 pl-4 pb-2.5 pt-3 rounded-lg text-white bg-red-500 text-mt m-2';
-  const normalLink =
-    'flex item-center gap-5 pl-4 pb-2.5 pt-3 rounded-lg dark:text-gray-200 dark:hover:text-black hover:bg-light-gray m-2 text-mt text-gray-700';
+  const activeLink = `flex item-center gap-5 pl-4 pb-2.5 pt-3 rounded-lg m-2 text-white text-mt bg-[${currentColor}]`;
+  const normalLink ='flex item-center gap-5 pl-4 pb-2.5 pt-3 rounded-lg m-2 dark:text-gray-200 dark:hover:text-black hover:bg-light-gray text-mt text-gray-700';
 
   return (
     <div className='ml-3 h-screen md:overflow-hidden overflow-auto md:hover:overflow-auto pb-10'>
@@ -39,7 +37,9 @@ const Sidebar = () => {
               <button
                 type='button'
                 className='text-xl p-3 rounded-full mt-4 hover:ng-light-gray md:hidden block'
-                onClick={()=> setActiveMenu((prevActiveMenu) => !prevActiveMenu)}
+                onClick={() =>
+                  setActiveMenu((prevActiveMenu) => !prevActiveMenu)
+                }
               >
                 <MdOutlineCancel />
               </button>
@@ -54,10 +54,13 @@ const Sidebar = () => {
                     to={`/${link.route}`}
                     key={link.route}
                     onClick={sidebarCloseHandler}
-                    className={({isActive}) => isActive ? activeLink: normalLink}
+                    style={({isActive})=> ({backgroundColor: isActive ? currentColor : ''})}
+                    className={({ isActive }) =>
+                      isActive ? activeLink : normalLink
+                    }
                   >
                     {link.icon}
-                    <span className="capitalize">{link.name}</span>
+                    <span className='capitalize'>{link.name}</span>
                   </NavLink>
                 ))}
               </div>

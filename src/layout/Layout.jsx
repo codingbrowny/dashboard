@@ -2,7 +2,7 @@ import React from 'react';
 import { TooltipComponent } from '@syncfusion/ej2-react-popups';
 import { FiSettings } from 'react-icons/fi';
 
-import { Navbar, Sidebar } from '../components';
+import { Navbar, Sidebar, ThemeSettings } from '../components';
 // import {
 //   Area,
 //   Bar,
@@ -24,15 +24,16 @@ import { Navbar, Sidebar } from '../components';
 import { useStateContext } from '../context/ContextProvider';
 
 const Layout = ({children}) => {
-  const { activeMenu } = useStateContext();
+  const { activeMenu, themeSettings, setThemeSettings, currentColor } = useStateContext();
   return (
     <div className='flex relative dark:bg-main-dark-bg'>
       <div className='fixed right-4 bottom-4' style={{ zIndex: 1000 }}>
         <TooltipComponent content='Settings' position='top'>
           <button
             type='button'
-            className='text-2xl p-2 hover:drop-shadow-xl text-white bg-red-500'
-            style={{ borderRadius: '50%' }}
+            onClick={() => setThemeSettings(true)}
+            className='text-2xl p-2 hover:drop-shadow-xl text-white'
+            style={{ borderRadius: '50%', backgroundColor: currentColor }}
           >
             <FiSettings />
           </button>
@@ -48,14 +49,14 @@ const Layout = ({children}) => {
         </div>
       )}
       <div
-        className={`dark:bg-main-bg min-h-screen w-full ${
+        className={`bg-[#f0f3fa] dark:bg-main-dark-bg min-h-screen w-full ${
           activeMenu ? 'md:ml-72' : 'flex-2'
         }`}
-        style={{ background: '#f0f3fa' }}
       >
-        <div className='fixed md:static bg-main-bg dark:bg-main-dark-bg navbar w-full'>
+        <div className='fixed md:static bg-main-bg dark:bg-main-dark-bg navbar w-full dark:drop-shadow-2xl'>
           <Navbar />
         </div>
+        {themeSettings && <ThemeSettings />}
         {children}
       </div>
     </div>
