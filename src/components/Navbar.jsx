@@ -19,7 +19,7 @@ const NavBtn = ({title, btnFunc, icon, color, dotColor}) => (
     style={{color}} 
     className='relative text-xl p-3 rounded-full hover:bg-light-gray'>
       <span
-      style={{background:dotColor}} 
+      style={{background:dotColor}}
       className='absolute inline-flex rounded-full h-2 w-2 right-2 top-2'/>
         {icon}
     </button>
@@ -33,15 +33,17 @@ const Navbar = () => {
     const resizeHandler = () => setScreenSize(window.innerWidth);
     window.addEventListener('resize', resizeHandler);
     resizeHandler();
-    return () => window.removeEventListener('resize', resizeHandler)
+    return () => window.removeEventListener('resize', resizeHandler);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   useEffect(() => {
-    if(screenSize <= 900) {
-      setActiveMenu(false)
+    if (screenSize <= 900) {
+      setActiveMenu(false);
     } else {
-      setActiveMenu(!false)
+      setActiveMenu(!false);
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [screenSize])
   
   

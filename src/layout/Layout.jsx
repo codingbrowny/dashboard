@@ -3,23 +3,6 @@ import { TooltipComponent } from '@syncfusion/ej2-react-popups';
 import { FiSettings } from 'react-icons/fi';
 
 import { Navbar, Sidebar, ThemeSettings } from '../components';
-// import {
-//   Area,
-//   Bar,
-//   Line,
-//   ColorMapping,
-//   Pyramid,
-//   Financial,
-//   Stacked,
-//   Calendar,
-//   ColorPicker,
-//   Customers,
-//   Ecommerce,
-//   Editor,
-//   Employees,
-//   Kanban,
-//   Orders,
-// } from '../pages';
 
 import { useStateContext } from '../context/ContextProvider';
 
