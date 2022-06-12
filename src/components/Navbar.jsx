@@ -27,14 +27,13 @@ const NavBtn = ({title, btnFunc, icon, color, dotColor}) => (
 )
 
 const Navbar = () => {
-  const {activeMenu, setActiveMenu, isClicked, setIsClicked, screenSize, setScreenSize, handleClick, currentColor} = useStateContext();
+  const {setActiveMenu, isClicked, screenSize, setScreenSize, handleClick, currentColor} = useStateContext();
 
   useEffect(() => {
     const resizeHandler = () => setScreenSize(window.innerWidth);
     window.addEventListener('resize', resizeHandler);
     resizeHandler();
     return () => window.removeEventListener('resize', resizeHandler)
-  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   useEffect(() => {
