@@ -30,7 +30,8 @@ const SparkLineChart = ({
       yName='yval'
       tooltipSettings={{
         visible: true,
-        format: 'X-${xval} : Y-${yval}',
+        // eslint-disable-next-line
+        format: '${xval} : ${yval}',
         trackLineSettings: {
           visible: true,
         },
