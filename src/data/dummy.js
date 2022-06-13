@@ -1,14 +1,12 @@
 import React from 'react';
 import { AiOutlineCalendar, AiOutlineShoppingCart, AiOutlineAreaChart, AiOutlineBarChart, AiOutlineStock } from 'react-icons/ai';
 import { FiShoppingBag, FiEdit, FiPieChart, FiBarChart, FiCreditCard, FiStar, FiShoppingCart } from 'react-icons/fi';
-import { BsKanban, BsBarChart, BsBoxSeam, BsCurrencyDollar, BsShield, BsChatLeft } from 'react-icons/bs';
-import { BiColorFill } from 'react-icons/bi';
+import { BsKanban, BsBoxSeam, BsCurrencyDollar, BsShield, BsChatLeft } from 'react-icons/bs';
 import { IoMdContacts } from 'react-icons/io';
 import { RiContactsLine, RiStockLine } from 'react-icons/ri';
 import { MdOutlineSupervisorAccount } from 'react-icons/md';
 import { HiOutlineRefresh } from 'react-icons/hi';
 import { TiTick } from 'react-icons/ti';
-import { GiLouvrePyramid } from 'react-icons/gi';
 import { GrLocation } from 'react-icons/gr';
 import avatar from './avatar.jpg';
 import avatar2 from './avatar2.jpg';
@@ -512,7 +510,7 @@ export const links = [
     title: 'Dashboard',
     links: [
       {
-        name: 'ecommerce',
+        name: 'home',
         route: 'ecommerce',
         icon: <FiShoppingBag />,
       },
@@ -528,7 +526,7 @@ export const links = [
         icon: <AiOutlineShoppingCart />,
       },
       {
-        name: 'employees',
+        name: 'users',
         route: 'employees',
         icon: <IoMdContacts />,
       },
@@ -548,7 +546,7 @@ export const links = [
         icon: <AiOutlineCalendar />,
       },
       {
-        name: 'kanban',
+        name: 'todo',
         route: 'kanban',
         icon: <BsKanban />,
       },
@@ -556,11 +554,6 @@ export const links = [
         name: 'editor',
         route: 'editor',
         icon: <FiEdit />,
-      },
-      {
-        name: 'color-picker',
-        route: 'color-picker',
-        icon: <BiColorFill />,
       },
     ],
   },
@@ -592,16 +585,6 @@ export const links = [
         name: 'financial',
         route: 'chart/financial',
         icon: <RiStockLine />,
-      },
-      {
-        name: 'color-mapping',
-        route: 'chart/color-mapping',
-        icon: <BsBarChart />,
-      },
-      {
-        name: 'pyramid',
-        route: 'chart/pyramid',
-        icon: <GiLouvrePyramid />,
       },
       {
         name: 'stacked',
