@@ -511,7 +511,7 @@ export const links = [
     links: [
       {
         name: 'home',
-        route: 'ecommerce',
+        route: '',
         icon: <FiShoppingBag />,
       },
     ],
@@ -616,7 +616,34 @@ export const cartData = [
   },
 ];
 
-export const chatData = [
+export const messagesData = [
+  {
+    image: avatar2,
+    sender: 'John Doe',
+    desc: 'Congratulate him',
+    time: '9:08 AM',
+  },
+  {
+    image: avatar3,
+    sender: 'Richard Miles',
+    desc: 'Salma sent you new message',
+    time: '11:56 AM',
+  },
+  {
+    image: avatar4,
+    sender: 'Philip Jonson',
+    desc: 'Check your earnings',
+    time: '4:39 AM',
+  },
+  {
+    image: avatar,
+    sender: 'Eva Hinton',
+    desc: 'Assign her new tasks',
+    time: '1:12 AM',
+  },
+];
+
+export const notificationData = [
   {
     image: avatar2,
     message: 'Roman Joined the Team!',

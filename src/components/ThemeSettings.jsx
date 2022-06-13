@@ -110,7 +110,6 @@ const ThemeSettings = () => {
             modeSwitcher
             change={handleThemeColorChange}
             enablePersistence
-            value={currentColor}
             style={{backgroundColor: currentMode==='Dark'? '#1d2026': 'white'}}
           />
         </div>

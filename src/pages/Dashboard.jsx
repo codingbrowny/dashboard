@@ -18,7 +18,7 @@ import {
 
 import { useStateContext } from '../context/ContextProvider';
 
-const Ecommerce = () => {
+const Dashboard = () => {
   const {currentColor} = useStateContext()
   return (
     <div className='mt-12 px-5 md:mx-10'>
@@ -112,4 +112,4 @@ const Ecommerce = () => {
   );
 };
 
-export default Ecommerce;
+export default Dashboard;

@@ -10,7 +10,7 @@ import {
   ColorMapping,
   ColorPicker,
   Customers,
-  Ecommerce,
+  Dashboard,
   Editor,
   Employees,
   Financial,
@@ -36,8 +36,7 @@ const App = () => {
           <div>
             <Routes>
               {/* Main Pages */}
-              <Route path='/' element={<Ecommerce />} />
-              <Route path='/ecommerce' element={<Ecommerce />} />
+              <Route path='/' element={<Dashboard />} />
               {/* Other Pages */}
               <Route path='/orders' element={<Orders />} />
               <Route path='/customers' element={<Customers />} />

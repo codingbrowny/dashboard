@@ -1,13 +1,12 @@
 import React, {useEffect} from 'react';
 import { HiOutlineMenuAlt2 } from 'react-icons/hi';
-import {FiShoppingCart} from 'react-icons/fi';
 import {BsChatLeft} from "react-icons/bs";
 import {RiNotification3Line} from 'react-icons/ri';
 import {MdKeyboardArrowDown} from 'react-icons/md';
 import {TooltipComponent} from '@syncfusion/ej2-react-popups';
 
 import avatar from '../data/avatar.jpg'
-import {Cart, Notification, Chat, UserProfile} from '.'
+import {Notification, Messages, UserProfile} from '.'
 
 import {useStateContext} from '../context/ContextProvider';
 
@@ -58,12 +57,6 @@ const Navbar = () => {
       
       <div className="flex">
       <NavBtn 
-      title='Cart' 
-      btnFunc={()=> handleClick('cart')}
-      color={currentColor}
-      icon={<FiShoppingCart/>} 
-      />
-      <NavBtn 
       title='Messages' 
       btnFunc={()=> handleClick('messages')}
       color={currentColor}
@@ -71,7 +64,7 @@ const Navbar = () => {
       icon={<BsChatLeft/>} 
       />
       <NavBtn 
-      title='Notification' 
+      title='Notifications' 
       btnFunc={()=> handleClick('notification')}
       color={currentColor}
       dotColor='#f338'
@@ -90,8 +83,7 @@ const Navbar = () => {
           <MdKeyboardArrowDown className='text-gray-400 font-14' />
         </div>
       </TooltipComponent>
-      {isClicked.cart && <Cart/>}
-      {isClicked.messages && <Chat/>}
+      {isClicked.messages && <Messages/>}
       {isClicked.notification && <Notification/>}
       {isClicked.profile && <UserProfile/>}
       </div>
