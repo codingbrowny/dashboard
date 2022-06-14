@@ -6,7 +6,7 @@ import { TooltipComponent } from '@syncfusion/ej2-react-popups';
 
 import { themeColors } from '../data/dummy';
 
-import { useStateContext } from '../context/ContextProvider';
+import { useThemeContext } from '../context/ThemeProvider';
 
 const ThemeSettings = () => {
   const {
@@ -16,11 +16,11 @@ const ThemeSettings = () => {
     currentColor,
     setThemeSettings,
     handleThemeColorChange,
-  } = useStateContext();
+  } = useThemeContext();
 
   return (
-    <div className='fixed top-0 left-0 right-0 bottom-0 z-50 nav-item w-screen bg-half-transparent'>
-      <div className='float-right bg-[#f0f3fa] dark:text-gray-200 w-400 h-screen dark:bg-secondary-dark-bg'>
+    <div className='fixed top-0 left-0 right-0 bottom-0 z-50 nav-item w-screen bg-half-transparent '>
+      <div className='float-right bg-[#f0f3fa] dark:text-gray-200 w-400 h-screen dark:bg-secondary-dark-bg theme-settings'>
         <div className='flex justify-between items-center p-4 ml-4'>
           <p className='font-semiblod text-xl'>Settings</p>
           <button
@@ -110,7 +110,9 @@ const ThemeSettings = () => {
             modeSwitcher
             change={handleThemeColorChange}
             enablePersistence
-            style={{backgroundColor: currentMode==='Dark'? '#1d2026': 'white'}}
+            style={{
+              backgroundColor: currentMode === 'Dark' ? '#1d2026' : 'white',
+            }}
           />
         </div>
       </div>

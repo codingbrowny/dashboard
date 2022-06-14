@@ -1,16 +1,18 @@
-import React from 'react'
+import React from 'react';
 import { MdOutlineCancel } from 'react-icons/md';
 import { Button } from '.';
 
 import { messagesData } from '../data/dummy';
 import { useStateContext } from '../context/ContextProvider';
+import { useThemeContext } from '../context/ThemeProvider';
 
 const Messages = () => {
-const {currentColor, setIsClicked} = useStateContext();
+  const { currentColor } = useThemeContext();
+  const { setIsClicked } = useStateContext();
 
   return (
     <div
-      className='nav-item absolute right-5 md:right-52 top-16 bg-white dark:bg-[#42464D] p-6 rounded-lg w-72 drop-shadow-lg'
+      className='nav-item fixed right-5 md:right-52 top-16 bg-white dark:bg-[#42464D] p-6 rounded-lg w-72 drop-shadow-lg'
       style={{ zIndex: 1000 }}
     >
       <div className='flex justify-between items-center border-b-2 pb-1'>
@@ -68,6 +70,6 @@ const {currentColor, setIsClicked} = useStateContext();
       </div>
     </div>
   );
-}
+};
 
-export default Messages
+export default Messages;

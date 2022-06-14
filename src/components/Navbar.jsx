@@ -9,10 +9,11 @@ import avatar from '../data/avatar.jpg'
 import {Notification, Messages, UserProfile} from '.'
 
 import {useStateContext} from '../context/ContextProvider';
+import { useThemeContext } from '../context/ThemeProvider';
 
 const NavBtn = ({title, btnFunc, icon, color, dotColor}) => (
   <TooltipComponent content={title} position="BottomCenter">
-    <button 
+    <button
     type='button' 
     onClick={btnFunc} 
     style={{color}} 
@@ -26,7 +27,8 @@ const NavBtn = ({title, btnFunc, icon, color, dotColor}) => (
 )
 
 const Navbar = () => {
-  const {setActiveMenu, isClicked, screenSize, setScreenSize, handleClick, currentColor} = useStateContext();
+  const { currentColor } = useThemeContext();
+  const {setActiveMenu, isClicked, screenSize, setScreenSize, handleClick} = useStateContext();
 
   useEffect(() => {
     const resizeHandler = () => setScreenSize(window.innerWidth);
@@ -53,7 +55,7 @@ const Navbar = () => {
       title='Menu' 
       btnFunc={()=> setActiveMenu((prevActiveMenu)=> !prevActiveMenu)}
       color={currentColor}
-      icon={<HiOutlineMenuAlt2/>} />
+        icon={<HiOutlineMenuAlt2 />} />
       
       <div className="flex">
       <NavBtn 

@@ -16,10 +16,10 @@ import {
   // ecomPieChartData,
 } from '../data/dummy';
 
-import { useStateContext } from '../context/ContextProvider';
+import {useThemeContext} from '../context/ThemeProvider'
 
 const Dashboard = () => {
-  const {currentColor} = useStateContext()
+  const {currentColor} = useThemeContext()
   return (
     <div className='mt-12 px-5 md:mx-10'>
       <div className='flex flex-wrap lg:flex-nowrap justify-center'>

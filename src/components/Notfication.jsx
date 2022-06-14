@@ -4,12 +4,14 @@ import { MdOutlineCancel } from 'react-icons/md';
 import { Button } from '.';
 import { notificationData } from '../data/dummy';
 import { useStateContext } from '../context/ContextProvider';
+import { useThemeContext } from '../context/ThemeProvider';
 
 const Notification = () => {
-  const { currentColor, setIsClicked } = useStateContext();
+  const {currentColor} = useThemeContext()
+  const { setIsClicked } = useStateContext();
 
   return (
-    <div className='nav-item absolute right-5 md:right-40 top-16 bg-white dark:bg-[#42464D] p-6 rounded-lg w-72 drop-shadow-lg'>
+    <div className='nav-item fixed right-5 md:right-40 top-16 bg-white dark:bg-[#42464D] p-6 rounded-lg w-72 drop-shadow-lg'>
       <div className='flex justify-between items-center border-b-2'>
         <div className='flex gap-3'>
           <p className='font-semibold text-lg dark:text-gray-200'>

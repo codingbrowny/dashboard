@@ -8,7 +8,6 @@ import {
   Bar,
   Calendar,
   ColorMapping,
-  ColorPicker,
   Customers,
   Dashboard,
   Editor,
@@ -22,10 +21,10 @@ import {
   Stacked,
 } from './pages';
 
-import { useStateContext } from './context/ContextProvider';
+import { useThemeContext } from './context/ThemeProvider';
 
 const App = () => {
-  const { currentMode } = useStateContext();
+  const { currentMode } = useThemeContext();
 
   const themeMode = localStorage.getItem('themeMode')
 
@@ -45,7 +44,6 @@ const App = () => {
               <Route path='/calendar' element={<Calendar />} />
               <Route path='/editor' element={<Editor />} />
               <Route path='/kanban' element={<Kanban />} />
-              <Route path='/color-picker' element={<ColorPicker />} />
               {/* Dashboard Charts */}
               <Route path='/chart/area' element={<Area />} />
               <Route path='/chart/pie' element={<Pie />} />

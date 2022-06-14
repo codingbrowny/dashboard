@@ -7,26 +7,33 @@ export const ThemeProvider = ({ children }) => {
     const [currentMode, setCurrentMode] = useState('Light');
     const [themeSettings, setThemeSettings] = useState(false)
     
-    const setMode = (e) => {
+    const setThemeMode = (e) => {
         setCurrentMode(e.target.value);
         localStorage.setItem('themeMode', e.target.value)
     }
 
-    const colorMode = (e) => {
-      setCurrentColor(e.target.value);
-      localStorage.setItem('themeColor', e.target.value);
+    const setThemeColor = (color) => {
+        setCurrentColor(color);
+      localStorage.setItem('themeColor', color);
+    };
+
+    const handleThemeColorChange = (e, value) => {
+      value = e.currentValue.hex;
+      setCurrentColor(value.toUpperCase());
+      localStorage.setItem('themeColor', value);
     };
 
     return(
         <ThemeContext.Provider
-            value={[
+            value={{
                 currentColor,
-                colorMode,
+                setThemeColor,
                 currentMode,
-                setMode,
+                setThemeMode,
                 themeSettings,
-                setThemeSettings
-            ]}
+                setThemeSettings,
+                handleThemeColorChange
+            }}
         >
             {children}
         </ThemeContext.Provider>

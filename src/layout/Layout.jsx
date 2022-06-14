@@ -4,10 +4,12 @@ import { FiSettings } from 'react-icons/fi';
 
 import { Navbar, Sidebar, ThemeSettings } from '../components';
 
+import { useThemeContext } from '../context/ThemeProvider';
 import { useStateContext } from '../context/ContextProvider';
 
 const Layout = ({children}) => {
-  const { activeMenu, themeSettings, setThemeSettings, currentColor } = useStateContext();
+  const {activeMenu} = useStateContext()
+  const { themeSettings, setThemeSettings, currentColor } = useThemeContext();
   return (
     <div className='flex relative dark:bg-main-dark-bg'>
       <div className='fixed right-4 bottom-4' style={{ zIndex: 1000 }}>
@@ -24,14 +26,12 @@ const Layout = ({children}) => {
       </div>
       {activeMenu ? (
         <div
-          className='w-72 fixed sidebar dark:bg-secondary-dark-bg bg-white'
-          style={{ zIndex: 1000 }}
+          className='w-72 fixed sidebar dark:bg-secondary-dark-bg bg-white sidebar'
         >
           <Sidebar />
         </div>
       ) : (
-          <div className='w-0 dark:bg-secondary-dark-bg'
-            style={{ zIndex: 1000 }}
+          <div className='w-0 dark:bg-secondary-dark-bg sidebar'
           >
           <Sidebar />
         </div>
@@ -42,7 +42,6 @@ const Layout = ({children}) => {
         }`}
       >
         <div className='fixed md:static bg-main-bg dark:bg-main-dark-bg navbar w-full dark:drop-shadow-2xl'
-          style={{ zIndex: 1000 }}
         >
           <Navbar />
         </div>

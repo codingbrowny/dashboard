@@ -6,10 +6,13 @@ import { TooltipComponent } from '@syncfusion/ej2-react-popups';
 
 // Dummy Data
 import { links } from '../data/dummy';
+
+import { useThemeContext } from '../context/ThemeProvider';
 import { useStateContext } from '../context/ContextProvider';
 
 const Sidebar = () => {
-  const {activeMenu, setActiveMenu, screenSize, currentColor} = useStateContext();
+  const {currentColor} = useThemeContext()
+  const { activeMenu, setActiveMenu, screenSize, } = useStateContext();
 
   const sidebarCloseHandler = () => {
     if(activeMenu && screenSize <= 900) {
