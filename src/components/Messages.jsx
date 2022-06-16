@@ -12,7 +12,7 @@ const Messages = () => {
 
   return (
     <div
-      className='nav-item fixed right-5 md:right-52 top-16 bg-white dark:bg-[#42464D] p-6 rounded-lg w-72 drop-shadow-lg'
+      className='nav-item fixed right-5 md:right-28 top-16 bg-white dark:bg-[#42464D] p-6 rounded-lg w-72 drop-shadow-lg'
       style={{ zIndex: 1000 }}
     >
       <div className='flex justify-between items-center border-b-2 pb-1'>

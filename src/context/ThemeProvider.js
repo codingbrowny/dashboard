@@ -1,43 +1,44 @@
-import React, { createContext, useContext, useState } from 'react'
+import React, { createContext, useContext, useState } from 'react';
 
-const ThemeContext = createContext()
+const ThemeContext = createContext();
 
 export const ThemeProvider = ({ children }) => {
-    const [currentColor, setCurrentColor] = useState('#03c9d7');
-    const [currentMode, setCurrentMode] = useState('Light');
-    const [themeSettings, setThemeSettings] = useState(false)
-    
-    const setThemeMode = (e) => {
-        setCurrentMode(e.target.value);
-        localStorage.setItem('themeMode', e.target.value)
-    }
+  const [currentColor, setCurrentColor] = useState('#03c9d7');
+  const [isLightTheme, setIsLightTheme] = useState(true);
+  const [themeSettings, setThemeSettings] = useState(false);
 
-    const setThemeColor = (color) => {
-        setCurrentColor(color);
-      localStorage.setItem('themeColor', color);
-    };
+    const setThemeMode = () => {
+      setIsLightTheme(!isLightTheme)
+    localStorage.setItem('lightTheme', JSON.stringify(!isLightTheme));
+  };
 
-    const handleThemeColorChange = (e, value) => {
-      value = e.currentValue.hex;
-      setCurrentColor(value.toUpperCase());
-      localStorage.setItem('themeColor', value);
-    };
+  const setThemeColor = (color) => {
+    setCurrentColor(color);
+    localStorage.setItem('themeColor', color);
+  };
 
-    return(
-        <ThemeContext.Provider
-            value={{
-                currentColor,
-                setThemeColor,
-                currentMode,
-                setThemeMode,
-                themeSettings,
-                setThemeSettings,
-                handleThemeColorChange
-            }}
-        >
-            {children}
-        </ThemeContext.Provider>
-    )
-}
+  const handleThemeColorChange = (e, value) => {
+    value = e.currentValue.hex;
+    setCurrentColor(value.toUpperCase());
+    localStorage.setItem('themeColor', value);
+  };
 
-export const useThemeContext = () => useContext(ThemeContext)
+  return (
+    <ThemeContext.Provider
+      value={{
+        currentColor,
+        isLightTheme,
+        setIsLightTheme,
+        setThemeColor,
+        setThemeMode,
+        themeSettings,
+        setThemeSettings,
+        handleThemeColorChange,
+      }}
+    >
+      {children}
+    </ThemeContext.Provider>
+  );
+};
+
+export const useThemeContext = () => useContext(ThemeContext);

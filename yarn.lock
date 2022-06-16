@@ -1719,7 +1719,7 @@
     "@syncfusion/ej2-lists" "~19.4.55"
     "@syncfusion/ej2-popups" "~19.4.53"
 
-"@syncfusion/ej2-charts@19.4.54", "@syncfusion/ej2-charts@~19.4.52", "@syncfusion/ej2-charts@~19.4.54":
+"@syncfusion/ej2-charts@~19.4.52", "@syncfusion/ej2-charts@~19.4.54":
   version "19.4.54"
   resolved "https://registry.yarnpkg.com/@syncfusion/ej2-charts/-/ej2-charts-19.4.54.tgz#3c66c64163c14c7f1e0c784214b58c3377fef6fb"
   integrity sha512-kaZzhrdEoMXMU9FIHZMkhMXFlYt7Cs50dl8EuUXhue6e36nYV59CIeFLin3s/bPi7mN+GdGZUgXdT3edr2bvig==
@@ -2098,15 +2098,6 @@
     "@syncfusion/ej2-base" "~19.4.52"
     "@syncfusion/ej2-calendars" "19.4.56"
     "@syncfusion/ej2-react-base" "~19.4.56"
-
-"@syncfusion/ej2-react-charts@^19.4.50":
-  version "19.4.54"
-  resolved "https://registry.yarnpkg.com/@syncfusion/ej2-react-charts/-/ej2-react-charts-19.4.54.tgz#6d16a1780165275071ce3c9784534f43bdd14ee6"
-  integrity sha512-YIVrIrXVebYbMoJ48lLCnDdNTVRgbgyCbjHPmbthjFfGyz+F85D61VrHn6FRWc9PX+fW0GbtHfIinO5OoS+WAQ==
-  dependencies:
-    "@syncfusion/ej2-base" "~19.4.52"
-    "@syncfusion/ej2-charts" "19.4.54"
-    "@syncfusion/ej2-react-base" "~19.4.53"
 
 "@syncfusion/ej2-react-dropdowns@^19.4.52":
   version "19.4.56"

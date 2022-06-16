@@ -11,7 +11,6 @@ import { useThemeContext } from '../context/ThemeProvider';
 const ThemeSettings = () => {
   const {
     setThemeColor,
-    setThemeMode,
     currentMode,
     currentColor,
     setThemeSettings,
@@ -33,44 +32,7 @@ const ThemeSettings = () => {
         </div>
         <div className='flex-col border-t-1 border-color p-4 ml-4'>
           <p className='font-semiblod text-lg'>Themes</p>
-          <div className='flex justify-start items-center my-5'>
-            <div className='mr-4'>
-              <input
-                type='radio'
-                name='theme'
-                id='light'
-                value='Light'
-                className='cursor-pointer'
-                onChange={setThemeMode}
-                checked={currentMode === 'Light'}
-                hidden
-              />
-              <label
-                htmlFor='light'
-                className='bg-white drop-shadow-md py-2 px-5 rounded-md dark:text-black border-2 border-slate-900 dark:border-0'
-              >
-                Light
-              </label>
-            </div>
-            <div>
-              <input
-                type='radio'
-                name='theme'
-                id='dark'
-                value='Dark'
-                className='cursor-pointer'
-                onChange={setThemeMode}
-                checked={currentMode === 'Dark'}
-                hidden
-              />
-              <label
-                htmlFor='dark'
-                className='drop-shadow-lg py-2 px-5 text-white bg-main-dark-bg rounded-md dark:border-2 dark:border-white'
-              >
-                Dark
-              </label>
-            </div>
-          </div>
+         
         </div>
         <div className='flex-col border-t-1 border-color p-4 ml-4'>
           <p className='font-semiblod text-lg'>Theme Colors</p>

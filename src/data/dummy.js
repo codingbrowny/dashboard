@@ -1,10 +1,10 @@
 import React from 'react';
-import { AiOutlineCalendar, AiOutlineShoppingCart, AiOutlineAreaChart, AiOutlineBarChart, AiOutlineStock } from 'react-icons/ai';
-import { FiShoppingBag, FiEdit, FiPieChart, FiBarChart, FiCreditCard, FiStar, FiShoppingCart } from 'react-icons/fi';
+import { AiOutlineCalendar, AiOutlineShoppingCart, } from 'react-icons/ai';
+import { FiEdit,FiBarChart, FiCreditCard, FiStar, FiShoppingCart } from 'react-icons/fi';
 import { BsKanban, BsBoxSeam, BsCurrencyDollar, BsShield, BsChatLeft } from 'react-icons/bs';
 import { IoMdContacts } from 'react-icons/io';
-import { RiContactsLine, RiStockLine } from 'react-icons/ri';
-import { MdOutlineSupervisorAccount } from 'react-icons/md';
+import { RiContactsLine, RiDashboardLine } from 'react-icons/ri';
+import { MdOutlineSupervisorAccount, } from 'react-icons/md';
 import { HiOutlineRefresh } from 'react-icons/hi';
 import { TiTick } from 'react-icons/ti';
 import { GrLocation } from 'react-icons/gr';
@@ -512,7 +512,7 @@ export const links = [
       {
         name: 'home',
         route: '',
-        icon: <FiShoppingBag />,
+        icon: <RiDashboardLine />,
       },
     ],
   },
@@ -554,42 +554,6 @@ export const links = [
         name: 'editor',
         route: 'editor',
         icon: <FiEdit />,
-      },
-    ],
-  },
-  {
-    title: 'Charts',
-    links: [
-      {
-        name: 'line',
-        route: 'chart/line',
-        icon: <AiOutlineStock />,
-      },
-      {
-        name: 'area',
-        route: 'chart/area',
-        icon: <AiOutlineAreaChart />,
-      },
-
-      {
-        name: 'bar',
-        route: 'chart/bar',
-        icon: <AiOutlineBarChart />,
-      },
-      {
-        name: 'pie',
-        route: 'chart/pie',
-        icon: <FiPieChart />,
-      },
-      {
-        name: 'financial',
-        route: 'chart/financial',
-        icon: <RiStockLine />,
-      },
-      {
-        name: 'stacked',
-        route: 'chart/stacked',
-        icon: <AiOutlineBarChart />,
       },
     ],
   },
@@ -672,6 +636,16 @@ export const notificationData = [
 
 export const earningData = [
   {
+    icon: <FiBarChart />,
+    amount: '423,39',
+    percentage: '+38%',
+    title: 'Sales Today',
+    iconColor: 'rgb(228, 106, 118)',
+    iconBg: 'rgb(255, 244, 229)',
+
+    pcColor: 'green-600',
+  },
+  {
     icon: <MdOutlineSupervisorAccount />,
     amount: '39,354',
     percentage: '-4%',
@@ -687,16 +661,6 @@ export const earningData = [
     title: 'Products',
     iconColor: 'rgb(255, 244, 229)',
     iconBg: 'rgb(254, 201, 15)',
-    pcColor: 'green-600',
-  },
-  {
-    icon: <FiBarChart />,
-    amount: '423,39',
-    percentage: '+38%',
-    title: 'Sales',
-    iconColor: 'rgb(228, 106, 118)',
-    iconBg: 'rgb(255, 244, 229)',
-
     pcColor: 'green-600',
   },
   {
@@ -3141,16 +3105,16 @@ export const dropdownData = [
   },
 ];
 export const SparklineAreaData = [
-  { x: 0, xval: '2005', yval: 20090440 },
-  { x: 1, xval: '2006', yval: 21264080 },
-  { x: 2, xval: '2007', yval: 20434180 },
-  { x: 3, xval: '2008', yval: 21707310 },
-  { x: 4, xval: '2009', yval: 21262640 },
-  { x: 5, xval: '2010', yval: 29515750 },
-  { x: 6, xval: '2011', yval: 21766710 },
-  { x: 7, xval: '2012', yval: 22015580 },
-  { x: 8, xval: '2013', yval: 20062500 },
-  { x: 9, xval: '2014', yval: 12507620 },
+  { x: 0, xval: '2005', yval: 3009 },
+  { x: 1, xval: '2006', yval: 5126 },
+  { x: 2, xval: '4007', yval: 9043 },
+  { x: 3, xval: '2008', yval: 6170 },
+  { x: 4, xval: '2009', yval: 1126 },
+  { x: 5, xval: '2010', yval: 7951 },
+  { x: 6, xval: '2011', yval: 2176 },
+  { x: 7, xval: '2012', yval: 8201 },
+  { x: 8, xval: '2013', yval: 4006 },
+  { x: 9, xval: '2014', yval: 1250 },
 ];
 
 export const lineCustomSeries = [

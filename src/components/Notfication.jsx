@@ -11,19 +11,12 @@ const Notification = () => {
   const { setIsClicked } = useStateContext();
 
   return (
-    <div className='nav-item fixed right-5 md:right-40 top-16 bg-white dark:bg-[#42464D] p-6 rounded-lg w-72 drop-shadow-lg'>
+    <div className='nav-item fixed right-5 md:right-24 top-16 bg-white dark:bg-[#42464D] p-6 rounded-lg w-72 drop-shadow-lg'>
       <div className='flex justify-between items-center border-b-2'>
         <div className='flex gap-3'>
           <p className='font-semibold text-lg dark:text-gray-200'>
             Notifications
           </p>
-          <button
-            type='button'
-            className='text-white text-xs rounded p-1 px-2 bg-orange-theme '
-          >
-            {' '}
-            5 New
-          </button>
         </div>
         <Button
           icon={<MdOutlineCancel />}
