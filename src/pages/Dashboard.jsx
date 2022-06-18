@@ -1,8 +1,11 @@
 import React from 'react';
-import { Card, } from '../components';
+import { Card, PieChart, LineChart } from '../components';
 import { earningData, } from '../data/dummy';
 
+import { useThemeContext } from '../context/ThemeProvider';
+
 const Dashboard = () => {
+  const { currentColor } = useThemeContext();
   return (
     <div className='mt-12 px-5 md:mx-10'>
       <div className='flex justify-center flex-wrap md:flex-nowrap items-center gap-5 '>
@@ -25,6 +28,26 @@ const Dashboard = () => {
           </Card>
         ))}
       </div>
+      <div className='mt-10 flex justify-center flex-wrap md:flex-nowrap items-center gap-5 drop-shadow-md'>
+        <div className='md:w-2/3 bg-white dark:bg-secondary-dark-bg p-5 rounded-2xl'>
+          <p className='text-lg tracking-tigh text-gray-500 dark:text-gray-200 mb-5 font-bold'>
+            Annual Sales Overview
+          </p>
+          <LineChart height='300' borderRadius={12} />
+        </div>
+        <div className='md:w-1/3 bg-white dark:bg-secondary-dark-bg p-5 rounded-2xl'>
+          <p className='text-lg tracking-tigh text-gray-500 dark:text-gray-200 mb-5 font-bold'>
+            Inventory
+          </p>
+          <PieChart
+            color={currentColor}
+            title='Earning'
+            height='300'
+          />
+        </div>
+      </div>
+      {/* New In Stock */}
+      
     </div>
   );
 };

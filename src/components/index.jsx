@@ -9,3 +9,6 @@ export { default as Notification } from './Notfication';
 export { default as UserProfile } from './UserProfile';
 export { default as ChartsHeader } from './ChartsHeader';
 export { default as Header } from './Header';
+export { default as AreaChart } from './Charts/AreaChart';
+export { default as LineChart } from './Charts/LineChart';
+export { default as PieChart } from './Charts/PieChart';

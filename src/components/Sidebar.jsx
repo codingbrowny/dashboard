@@ -57,12 +57,14 @@ const Sidebar = () => {
                     to={`/${link.route}`}
                     key={link.route}
                     onClick={sidebarCloseHandler}
-                    style={({isActive})=> ({backgroundColor: isActive ? currentColor : ''})}
+                    style={({ isActive }) => ({
+                      backgroundColor: isActive ? currentColor : '',
+                    })}
                     className={({ isActive }) =>
                       isActive ? activeLink : normalLink
                     }
                   >
-                    {link.icon}
+                    <span className='text-xl'>{link.icon}</span>
                     <span className='capitalize'>{link.name}</span>
                   </NavLink>
                 ))}
