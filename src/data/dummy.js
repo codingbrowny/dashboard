@@ -526,7 +526,7 @@ export const links = [
     links: [
       {
         name: 'home',
-        route: '',
+        route: 'dashboard',
         icon: <RiDashboardLine />,
       },
     ],
@@ -562,7 +562,7 @@ export const links = [
       },
       {
         name: 'todo',
-        route: 'kanban',
+        route: 'todo',
         icon: <BsKanban />,
       },
       {

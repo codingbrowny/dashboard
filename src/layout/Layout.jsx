@@ -1,4 +1,5 @@
 import React from 'react';
+import { Outlet } from 'react-router-dom';
 import { TooltipComponent } from '@syncfusion/ej2-react-popups';
 import { FiSettings } from 'react-icons/fi';
 
@@ -7,7 +8,7 @@ import { Navbar, Sidebar, ThemeSettings } from '../components';
 import { useThemeContext } from '../context/ThemeProvider';
 import { useStateContext } from '../context/ContextProvider';
 
-const Layout = ({children}) => {
+const Layout = () => {
   const {activeMenu} = useStateContext()
   const { themeSettings, setThemeSettings, currentColor } = useThemeContext();
   return (
@@ -46,7 +47,7 @@ const Layout = ({children}) => {
           <Navbar />
         </div>
         {themeSettings && <ThemeSettings />}
-        {children}
+        <Outlet/>
       </div>
     </div>
   );

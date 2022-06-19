@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react';
+import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { Layout } from './layout';
 
@@ -9,32 +9,31 @@ import {
   Dashboard,
   Editor,
   Employees,
+  Login,
   Orders,
+  Todo,
 } from './pages';
 
 import { useThemeContext } from './context/ThemeProvider';
 
 const App = () => {
   const { isLightTheme } = useThemeContext();
-  
+
   return (
-    <div className={(isLightTheme) ? '' : 'dark'}>
+    <div className={isLightTheme ? '' : 'dark'}>
       <BrowserRouter>
-        <Layout>
-          <div>
-            <Routes>
-              {/* Main Pages */}
-              <Route path='/' element={<Dashboard />} />
-              {/* Other Pages */}
-              <Route path='/orders' element={<Orders />} />
-              <Route path='/customers' element={<Customers />} />
-              <Route path='/employees' element={<Employees />} />
-              {/* Applications */}
-              <Route path='/calendar' element={<Calendar />} />
-              <Route path='/editor' element={<Editor />} />
-            </Routes>
-          </div>
-        </Layout>
+        <Routes>
+          <Route path='/login' element={<Login />} />
+          <Route path='/' element={<Layout />}>
+            <Route path='dashboard' element={<Dashboard />} />
+            <Route path='orders' element={<Orders />} />
+            <Route path='customers' element={<Customers />} />
+            <Route path='employees' element={<Employees />} />
+            <Route path='calendar' element={<Calendar />} />
+            <Route path='editor' element={<Editor />} />
+            <Route path='todo' element={<Todo/>}/>
+          </Route>
+        </Routes>
       </BrowserRouter>
     </div>
   );
