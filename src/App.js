@@ -16,12 +16,7 @@ import { useThemeContext } from './context/ThemeProvider';
 
 const App = () => {
   const { isLightTheme } = useThemeContext();
-
-  useEffect(() => {
-    const isLight = JSON.parse(localStorage.getItem('lightTheme'));
-    console.log(isLight);
-  }, [isLightTheme])
-
+  
   return (
     <div className={(isLightTheme) ? '' : 'dark'}>
       <BrowserRouter>

@@ -10,7 +10,7 @@ const Dashboard = () => {
     <div className='mt-12 px-5 md:mx-10'>
       <div className='flex justify-center flex-wrap md:flex-nowrap items-center gap-5 '>
         {earningData.map((item) => (
-          <Card key={item.title} width='lg:w-1/4'>
+          <Card key={item.title} width='w-full sm:w-2/4 md:w-1/4'>
             <button
               type='button'
               style={{ color: item.iconColor, backgroundColor: item.iconBg }}
@@ -29,13 +29,13 @@ const Dashboard = () => {
         ))}
       </div>
       <div className='mt-10 flex justify-center flex-wrap md:flex-nowrap items-center gap-5 drop-shadow-md'>
-        <div className='md:w-2/3 bg-white dark:bg-secondary-dark-bg p-5 rounded-2xl'>
+        <div className='w-full md:w-2/3 bg-white dark:bg-secondary-dark-bg p-5 rounded-2xl'>
           <p className='text-lg tracking-tigh text-gray-500 dark:text-gray-200 mb-5 font-bold'>
             Annual Sales Overview
           </p>
           <LineChart height='300' borderRadius={12} />
         </div>
-        <div className='md:w-1/3 bg-white dark:bg-secondary-dark-bg p-5 rounded-2xl'>
+        <div className='w-full md:w-1/3 bg-white dark:bg-secondary-dark-bg p-5 rounded-2xl'>
           <p className='text-lg tracking-tigh text-gray-500 dark:text-gray-200 mb-5 font-bold'>
             Inventory
           </p>
@@ -47,7 +47,9 @@ const Dashboard = () => {
         </div>
       </div>
       {/* New In Stock */}
-      
+      <div className="mt-10">
+        
+      </div>
     </div>
   );
 };

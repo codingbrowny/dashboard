@@ -9,18 +9,17 @@ export const ThemeProvider = ({ children }) => {
 
     const setThemeMode = () => {
       setIsLightTheme(!isLightTheme)
-    localStorage.setItem('lightTheme', JSON.stringify(!isLightTheme));
   };
 
   const setThemeColor = (color) => {
     setCurrentColor(color);
-    localStorage.setItem('themeColor', color);
+    localStorage.setItem('theme', JSON.stringify({ isLightMode: isLightTheme, color }));
   };
 
   const handleThemeColorChange = (e, value) => {
     value = e.currentValue.hex;
     setCurrentColor(value.toUpperCase());
-    localStorage.setItem('themeColor', value);
+    localStorage.setItem('theme', JSON.stringify({ isLightMode: isLightTheme, color:value }));
   };
 
   return (

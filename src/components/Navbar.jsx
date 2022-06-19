@@ -29,7 +29,7 @@ const NavBtn = ({ title, btnFunc, icon, color, dotColor }) => (
 );
 
 const Navbar = () => {
-  const { currentColor, isLightTheme,  setThemeMode } = useThemeContext();
+  const { currentColor, isLightTheme,  setThemeMode, setIsLightTheme } = useThemeContext();
   const { setActiveMenu, isClicked, screenSize, setScreenSize, handleClick } =
     useStateContext();
 
@@ -49,6 +49,7 @@ const Navbar = () => {
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [screenSize]);
+
 
   return (
     <div className='flex justify-between p-2 md:mx-6 relative'>
