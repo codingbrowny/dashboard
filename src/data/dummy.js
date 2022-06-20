@@ -526,7 +526,7 @@ export const links = [
     links: [
       {
         name: 'home',
-        route: 'dashboard',
+        route: '',
         icon: <RiDashboardLine />,
       },
     ],

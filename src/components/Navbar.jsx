@@ -29,7 +29,7 @@ const NavBtn = ({ title, btnFunc, icon, color, dotColor }) => (
 );
 
 const Navbar = () => {
-  const { currentColor, isLightTheme,  setThemeMode, setIsLightTheme } = useThemeContext();
+  const { currentColor, isLightTheme,  setThemeMode } = useThemeContext();
   const { setActiveMenu, isClicked, screenSize, setScreenSize, handleClick } =
     useStateContext();
 

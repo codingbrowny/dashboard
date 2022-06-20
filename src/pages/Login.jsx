@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
-import { Card } from '../components';
 import { RiUser3Fill } from 'react-icons/ri';
 import { AiFillEyeInvisible, AiFillEye } from 'react-icons/ai';
+
+import avatar from '../data/avatar3.png'
 
 import { useThemeContext } from '../context/ThemeProvider';
 
@@ -16,10 +17,13 @@ const Login = () => {
       : pValue.setAttribute('type', 'password');
     setVisible(!visible);
   };
-  console.log(currentColor, typeof currentColor);
+
   return (
     <div className='flex justify-center items-center min-h-screen'>
-      <Card width='sm:w-4/5 md:w-1/2 lg:w-1/4 w-9/12'>
+      <div width='sm:w-4/5 md:w-1/2 lg:w-1/4 w-9/12 p-10 drop-shadow-lg'>
+        <div className="flex justify-center items-center mb-5">
+        <img src={avatar} alt="Profile" className='w-24 h-24 rounded-full p-2 drop-shadow-xl border-1' />
+        </div>
         <form action='' onSubmit={(e) => e.preventDefault}>
           <div className='form-field my-2'>
             <label
@@ -35,7 +39,7 @@ const Login = () => {
                 name='username'
                 placeholder='Enter username'
                 required
-                className={`px-3 py-2.5 border-2 w-full rounded-md focus:border-${currentColor}`}
+                className={`px-3 py-2.5 border-2 w-full rounded-md focus:border-[${currentColor}]`}
               />
               <span className='ml-[-30px] text-lg relative'>
                 <RiUser3Fill />
@@ -70,13 +74,13 @@ const Login = () => {
           <div className='form-field flex justify-center my-5'>
             <button
               type='submit'
-              className={`bg-[${currentColor}] p-3 w-full rounded-md text-white font-semibold hover:bg-opacity-70 drop-shadow-md`}
+              className={`bg-[#f3ee] p-3 w-full rounded-md text-white font-semibold hover:bg-opacity-70 drop-shadow-md`}
             >
               Login
             </button>
           </div>
         </form>
-      </Card>
+      </div>
     </div>
   );
 };
